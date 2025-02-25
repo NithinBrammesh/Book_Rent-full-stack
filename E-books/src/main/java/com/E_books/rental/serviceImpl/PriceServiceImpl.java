@@ -1,10 +1,15 @@
 package com.E_books.rental.serviceImpl;
 
 import com.E_books.rental.PriceService;
+import com.E_books.rental.TransactionService;
 import com.E_books.rental.dto.PriceDto;
+import com.E_books.rental.dto.TransactionDto;
 import com.E_books.rental.mapper.PriceMapper;
+import com.E_books.rental.mapper.TransactionMapper;
 import com.E_books.rental.model.Price;
+import com.E_books.rental.model.Transaction;
 import com.E_books.rental.repository.PriceRepository;
+import com.E_books.rental.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,20 +27,20 @@ public class PriceServiceImpl implements PriceService {
     }
 
     @Override
-    public PriceDto createPrices(PriceDto priceDto){
+    public PriceDto createPrices(PriceDto priceDto) {
         Price price = PriceMapper.mapToPrice(priceDto);
         Price savedPrices = priceRepository.save(price);
         return PriceMapper.mapToPriceDto(savedPrices);
     }
 
     @Override
-    public PriceDto getPriceById(int priceId){
-        Price price = priceRepository.findById(priceId).orElseThrow(()-> new RuntimeException("Price does not exist"));
+    public PriceDto getPriceById(int priceId) {
+        Price price = priceRepository.findById(priceId).orElseThrow(() -> new RuntimeException("Price does not exist"));
         return PriceMapper.mapToPriceDto(price);
     }
 
     @Override
-    public List<PriceDto> getAllPrices(){
+    public List<PriceDto> getAllPrices() {
         List<Price> prices = priceRepository.findAll();
         return prices.stream()
                 .map(PriceMapper::mapToPriceDto)
@@ -43,11 +48,11 @@ public class PriceServiceImpl implements PriceService {
     }
 
     @Override
-    public PriceDto updatePrices(int priceId, PriceDto priceDto){
+    public PriceDto updatePrices(int priceId, PriceDto priceDto) {
         Price existingPrice = priceRepository.findById(priceId)
-                .orElseThrow(()-> new RuntimeException("Price Does not exist"));
+                .orElseThrow(() -> new RuntimeException("Price Does not exist"));
 
-        if(priceDto.getDiscount() != null){
+        if (priceDto.getDiscount() != null) {
             existingPrice.setBookPrice(priceDto.getBookPrice());
         }
         existingPrice.setBookPrice(priceDto.getBookPrice());
@@ -57,8 +62,8 @@ public class PriceServiceImpl implements PriceService {
     }
 
     @Override
-    public PriceDto deletePriceById(int priceId){
-        Price price = priceRepository.findById(priceId).orElseThrow(()-> new RuntimeException("Price Does not exist"));
+    public PriceDto deletePriceById(int priceId) {
+        Price price = priceRepository.findById(priceId).orElseThrow(() -> new RuntimeException("Price Does not exist"));
 
         PriceDto priceDto = PriceMapper.mapToPriceDto(price);
         priceRepository.deleteById(priceId);

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+</head>
+<body>
+    <form>
+        <div  class="wrapper">
+                <h1>Welcome To E-Books</h1><br>
+                <h4>Kindly fill the form to register</h4>
+            <div class="inputbox">
+            
+            <input type="text" placeholder="Name" id="name" autocomplete="name">
+            </div>
+            <div class="inputbox">
+            <input type="email" placeholder="Email" id="email" autocomplete="email">
+            </div>
+            <div class="inputbox">
+            <input type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Phone no" id="phone" autocomplete="tel">
+            </div>
+            <div class="inputbox">
+            <input type="password" placeholder="Password" autocomplete="new-password" id="password">
+           </div>
+           <div class="inputbox">
+           <button type="submit" class="button">Register</button>
+           </div>
+           <div class="inputbox">
+            <button type="submit" class="pincode">Pincode</button>
+           </div>
+           <div class="register">
+           <p>I already have register </p> <a href="#" onclick="openPopup()">Login</a></div>
+        </div>
+    </div>
+</form>
+
+<div id="registerPopup" class="popup-container">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h1>Welcome To E-Books</h1>
+        <h4>Kindly fill the form to register</h4>
+        <div class="inputbox">
+            <input type="text" placeholder="Name" id="name" autocomplete="name">
+        </div>
+        <div class="inputbox">
+            <input type="email" placeholder="Email" id="email" autocomplete="email">
+        </div>
+        <div class="inputbox">
+            <input type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Phone no" id="phone" autocomplete="tel">
+        </div>
+        <div class="inputbox">
+            <input type="password" placeholder="Password" autocomplete="new-password" id="password">
+        </div>
+        <div class="inputbox">
+            <button type="submit" class="button">Register</button>
+        </div>
+        <div class="inputbox">
+            <button type="submit" class="pincode">Pincode</button>
+        </div>
+        <div class="register">
+            <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

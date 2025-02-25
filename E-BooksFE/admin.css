@@ -1,82 +1,83 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'popins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color:floralwhite; 
-    color: #333; 
+    background-color: floralwhite;
+    color: #333;
     line-height: 1.6;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navbar {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logo{
-    font-size: 40px;
-    margin-left: -250px;
-    margin-top: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
-}
-
-.menu li{
-    list-style: none;
-    font-size: 20px;
-    margin-left: 1180px;
-    margin-top: -80px;
-}
-
-ul li a{
-    color: #333;
-    text-decoration: none;
-    font-family: Arial;
+.icon {
+    font-size: 2rem;
     font-weight: bold;
+    text-align:calc(-50%);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    padding-top: -1%;
+}
+
+.menu{
+    text-decoration: none;
+  margin-top: -2%;
+  margin-left: 85%;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: -3%;
+}
+.menu a{
+    text-decoration: none;
+    color: #333;
 }
 
 .search {
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    width: 80%;
+    margin-top: -3.7%;
 }
 
-.srch{
+.srch {
     font-family: "Times New Roman";
-    width: 650px;
-    height: 40px;
+    height: 5vh;
+    width: 65%;
     background: transparent;
     border: 2px solid gray;
-    margin-top: -40px;
-    margin-left: 180px;
     color: black;
     border-right: none;
-    font-size: 16px;
-    float: left;
-    padding: 10px;
-    margin-top: -70px;
+    font-size: 1vw;
+    padding: 1%;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
-
 }
 
-.search a{
-    margin-top: -70px;
-    
-}
- .menu {
-    margin-left: 1200px;
-    margin-top: -55px;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
+.search a {
+    height: 100%;
 }
 
 .btn {
-    width: 100px;
-    height: 40px;
+    width: 10vh;
+    height: 5vh;
     background: gray;
     color: white;
     border: none;
@@ -85,71 +86,182 @@ ul li a{
     border-top-right-radius: 5px;
 }
 
+
 .trending {
-    margin-top: 180px;
+    margin-top: 10vh;
     text-align: center;
-}
-.books{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-.books > ul{
-    list-style: none;
-    display: flex;
-    gap:40px;
-    justify-content: center;
-    padding: 0%; 
-  padding: 10px;
-  
+    font-size: 1.5vw;
 }
 
-.books ul li{
-    display: inline-block;
-
-
-}
-
-.books ul li img{
-    margin-top: 50px;
-    height: 75%;
-    width: 50%;
-}
 .books {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts based on screen size */
-    gap: 5%; /* Spacing between images */
-    padding: 10px;
-  }
-  
-  .books ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: contents; /* Allows direct use of grid */
-  }
-  
-  .books li {
+    grid-template-columns: repeat(auto-fit, minmax(15%, 1fr));
+    gap: 2%;
+    padding: 3%;
+    width: 90%;
+    margin: 0 auto;
+} 
+
+.book {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .books img {
-    width: 100%; /* Makes images responsive */
+    background-color: #f1f1f1;
+    border: 1px solid gray;
+    padding: 5%;
+    border-radius: 2%;
+}
+
+.book img {
+    width: 100%;
     height: auto;
-    border-radius: 5px;
-  }
-  
-.container {
-    max-width: 90%;
-
+    border-radius: 5%;
 }
 
-.container > .books {
-    width: 200px;
-    height: 400px;
-    border: 1px;
-    float: left;
+
+.popup-container {
+    display: none;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 2%;
+    width: 30%;
+    border-radius: 1%;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+close-btn:hover {
+    color: red;
+}
+
+/* 🔹 Input Box */
+.inputbox {
+    margin: 10px 0;
+}
+
+.inputbox input {
+    width: 100%;
     padding: 10px;
-    margin: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
 }
+
+.inputbox input:focus {
+    border-color: #28a745;
+}
+
+/* 🔹 Remember Me & Forgot Password */
+.forget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.forget input {
+    margin-right: 5px;
+}
+
+.forget a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Register Link */
+.register {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.register a {
+    text-decoration: none;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* 🔹 Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* 📱 Extra Small Devices (Phones under 480px) */
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 7vw;
+        text-align:center;
+    }
+    .search{
+        width: 90%;
+        display: flex;
+        margin-top: 18%;
+       }
+
+    .srch {
+        width: 85%;
+        padding: 5%;
+        font-size: 2vh;
+    }
+    .menu{
+        margin-top: -40%;
+        font-size: 2vh;
+    }
+    .btn {
+        width: 100%;
+        height: 5vh;
+    }
+
+    .trending{
+        margin-top: 40%;
+        font-size: 1.2vh;
+    }
+
+    .books {
+        grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    }
+    .popup-content{
+        width: 80%;
+    
+
+    }
+}
+

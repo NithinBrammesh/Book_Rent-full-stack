@@ -18,6 +18,7 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
         @RequestMapping
         ResponseEntity<List<UserDto>> getAllUsers(){
             return ResponseEntity.ok(userService.getAllUsers());
@@ -41,7 +42,7 @@ public class UserController {
 
       @DeleteMapping("/{userId}")
       public ResponseEntity<UserDto> deleteUserById(@PathVariable("userId") int userId){
-      UserDto deleteUserById = userService.getUserById(userId);
+      UserDto deleteUserById = userService.deleteUser(userId);
        return ResponseEntity.ok(deleteUserById);
     }
 }

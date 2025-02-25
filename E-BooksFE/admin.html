@@ -11,38 +11,83 @@
         <div class="icon">
             <h2 class="logo">E-Books</h2>
         </div>
-        <div>
+
             <div class="search">
                 <input class="srch" name="" placeholder="Search here..!">
                  <a href="#"><button class="btn">Search</button></a>
-                </div>
-                 <div class="menu"
-                 <a href="#">Login</a>
-            
-                 </div>
+            </div>
+
+             <div class="menu">
+                 <a href="#" onclick="openPopup()">Login</a>
+            </div>
         
             <div class="trending">
                 <h2>Trending Books</h2>
             </div>
+
             <div class="books">
-                <ul>
-                    <li>
-                        <img src="story1.jpg" alt="no image">
-                    </li>
-                    <li>
-                        <img src="story2_.jpg" alt="no image">
-                    </li>
-                    <li><img src="story3.png" alt="no image"></li>
-                    <li><img src="story4.jpeg" alt="no image"></li>
-                    <li><img src="story5.jpeg" alt="no image"></li>
-                    <li><img src="story6.jpg" alt="no image"></li>
-                    <li><img src="story11.jpeg" alt="no image"></li>
-                    <li><img src="story8.webp" alt="no image"></li>
-                    <li><img src="story9.jpg" alt="no image"></li>
-                    <li><img src="story10.jpg" alt="no image"></li>
-                </ul>
+                <div class="book"><img src="storyPhotos/story1.jpg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story2_.jpg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story3.png" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story4.jpeg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story5.jpeg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story6.jpg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story11.jpeg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story8.webp" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story9.jpg" alt="No Image"></div>
+                <div class="book"><img src="storyPhotos/story10.jpg" alt="No Image"></div>
+            </div>
+       </div>
+
+       <div id="loginPopup" class="popup-container">
+       <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h2>Welcome Back</h2>
+          <div class="inputbox">
+            <input type="text" placeholder="Username or email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}" required>
+          </div>
+         <div class="inputbox">
+            <input type="password" placeholder="password" required>
+         </div>
+         <div class="forget">
+            <label><input type="checkbox">Remember</label>
+            <a href="#">Forget Password</a>
+         </div>
+         <div class="register">
+         <p>Dont have Account? <a href="#" onclick="openPopup()">Register</a></p>
+         </div>
+       </div>
+
+
+       <!-- <div id="registerPopup" class="popup-container">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h1>Welcome To E-Books</h1>
+            <h4>Kindly fill the form to register</h4>
+            <div class="inputbox">
+                <input type="text" placeholder="Name" id="name" autocomplete="name">
+            </div>
+            <div class="inputbox">
+                <input type="email" placeholder="Email" id="email" autocomplete="email">
+            </div>
+            <div class="inputbox">
+                <input type="tel" pattern="[6-9]{1}[0-9]{9}" placeholder="Phone no" id="phone" autocomplete="tel">
+            </div>
+            <div class="inputbox">
+                <input type="password" placeholder="Password" autocomplete="new-password" id="password">
+            </div>
+            <div class="inputbox">
+                <button type="submit" class="button">Register</button>
+            </div>
+            <div class="inputbox">
+                <button type="submit" class="pincode">Pincode</button>
+            </div>
+            <div class="register">
+                <p>Already have an account? <a href="#" onclick="switchToLogin()">Login</a></p>
             </div>
         </div>
-    </div>
+    </div> -->
+
+    <script src="script.js"></script>
 </body>
 </html>
